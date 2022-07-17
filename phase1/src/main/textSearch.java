@@ -10,8 +10,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class textSearch {
+
     public static HashMap<String, List<String>> invertedIndex = new HashMap<String, List<String>>();
-    public static String directoryPath = "E:\\java\\folder";
+    public static String directoryPath = new File("").getAbsolutePath() + "\\phase1\\database";
 
     public static void readDoc() throws IOException {
 
@@ -21,7 +22,11 @@ public class textSearch {
             if (!file.isDirectory()) {
                 FileReader fileReader = new FileReader(file.getPath());
                 BufferedReader bufferedReader = new BufferedReader(fileReader);
-                String text = bufferedReader.readLine().trim().toUpperCase();
+                String text = bufferedReader.readLine();
+                if (text == null) {
+                    continue;
+                }
+                text = text.toUpperCase().trim();
                 text = text.replaceAll("(\\W+)", " ").trim();
 
                 String[] words = text.split(" ");
@@ -37,13 +42,13 @@ public class textSearch {
 
         List<String> files = invertedIndex.get(word);
         if (files == null) {
-            List<String> f = new ArrayList<>();
-            f.add(fileName);
-            invertedIndex.put(word, f);
+            List<String> fileNames = new ArrayList<>();
+            fileNames.add(fileName);
+            invertedIndex.put(word, fileNames);
             return;
         } else {
-            for (String f : files) {
-                if (f.equals(fileName)) {
+            for (String file : files) {
+                if (file.equals(fileName)) {
                     return;
                 }
 
@@ -63,7 +68,7 @@ public class textSearch {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("please enter the word");
-        String word = scanner.nextLine();
+        String word = scanner.nextLine().toUpperCase();
         List<String> fileNames = invertedIndex.get(word);
         if (fileNames == null) {
             System.out.println("word was not found!");
