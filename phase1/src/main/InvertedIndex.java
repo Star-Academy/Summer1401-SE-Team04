@@ -2,7 +2,6 @@ package main;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,37 +9,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class InvertedIndex {
-
-    private final HashMap<String, List<String>> invertedIndex = new HashMap<>();
     private final String directoryPath = new File("").getAbsolutePath() + "\\phase1\\database";
-
-    private void readDoc() throws IOException {
-
-        final File directory = new File(directoryPath);
+    private final HashMap<String, List<String>> invertedIndex = new HashMap<>();
 
 
-        for (final File file : Objects.requireNonNull(directory.listFiles())) {
-            String fileName = file.getName();
-            if (!file.isDirectory()) {
-                FileReader fileReader = new FileReader(file.getPath());
-                BufferedReader bufferedReader = new BufferedReader(fileReader);
-                String text = bufferedReader.readLine();
-                if (text == null) {
-                    continue;
-                }
-                text = text.toUpperCase().trim();
-                text = text.replaceAll("(\\W+)", " ").trim();
-
-                String[] words = text.split(" ");
-                for (String word : words) {
-                    addTextToInvertedIndex(word, fileName);
-                }
-
-            }
-        }
-    }
-
-    private void addTextToInvertedIndex(String word, String fileName) {
+    private void addWordToInvertedIndex(String word, String fileName) {
 
         List<String> files = invertedIndex.get(word);
         if (files == null) {
@@ -61,8 +34,15 @@ public class InvertedIndex {
 
     }
 
-    public HashMap<String, List<String>>  makeInvertedIndex() throws IOException {
-        readDoc();
+    public HashMap<String, List<String>> makeInvertedIndex() throws IOException {
+        HashMap<String, List<String>> wordsInFiles = new FileReader().readDocs(directoryPath);
+        for (String fileName : wordsInFiles.keySet()) {
+            List<String> words = wordsInFiles.get(fileName);
+            for (String word : words) {
+                addWordToInvertedIndex(word, fileName);
+            }
+        }
+
         return invertedIndex;
     }
 }
