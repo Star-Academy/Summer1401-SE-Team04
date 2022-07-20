@@ -18,6 +18,7 @@ public class InvertedIndex {
 
         final File directory = new File(directoryPath);
 
+
         for (final File file : Objects.requireNonNull(directory.listFiles())) {
             String fileName = file.getName();
             if (!file.isDirectory()) {
