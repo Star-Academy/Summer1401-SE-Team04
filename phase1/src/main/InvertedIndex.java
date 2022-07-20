@@ -17,6 +17,7 @@ public class InvertedIndex {
     private void readDoc() throws IOException {
 
         final File directory = new File(directoryPath);
+
         for (final File file : Objects.requireNonNull(directory.listFiles())) {
             String fileName = file.getName();
             if (!file.isDirectory()) {
