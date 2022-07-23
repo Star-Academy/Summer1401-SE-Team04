@@ -1,14 +1,14 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-import java.io.IOException;
-import java.util.*;
-
-public class textSearch {
-
-    public static List<String> getFileNamesBySearchWords(List<String> searchWords,
+public class Search {
+    public List<String> getFileNamesBySearchWords(List<String> searchWords,
                                                          HashMap<String, List<String>> invertedIndex) {
-        List<String> result = new ArrayList<>();
+
         HashMap<String, List<String>> positiveSearchWords = new HashMap<>();
         HashMap<String, List<String>> negativeSearchWords = new HashMap<>();
         HashMap<String, List<String>> normalSearchWords = new HashMap<>();
@@ -27,7 +27,7 @@ public class textSearch {
         return createFinalList(normalSearchWords,positiveSearchWords,negativeSearchWords);
     }
 
-    public static List<String> createFinalList(HashMap<String, List<String>> normalSearchWords, HashMap<String,
+    private List<String> createFinalList(HashMap<String, List<String>> normalSearchWords, HashMap<String,
             List<String>> positiveSearchWords, HashMap<String, List<String>> negativeSearchWords) {
         Map.Entry<String, List<String>> firstNormalSearchWord = normalSearchWords.entrySet().iterator().next();
         if (firstNormalSearchWord.getValue() == null) {
@@ -75,31 +75,4 @@ public class textSearch {
         return result;
     }
 
-    public static void main(String[] args) {
-        HashMap<String, List<String>> invertedIndex = null;
-        try {
-            invertedIndex = new InvertedIndex().makeInvertedIndex();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("please enter the words");
-        String words = scanner.nextLine().toUpperCase();
-        List<String> searchWords = List.of(words.split(" "));
-
-
-        List<String> finalResult = getFileNamesBySearchWords(searchWords, invertedIndex);
-
-        if (finalResult == null || finalResult.size() == 0) {
-            System.out.println("word was not found!");
-            return;
-        }
-
-        for (String fileName : finalResult) {
-            System.out.println(fileName);
-        }
-
-    }
-
 }
-

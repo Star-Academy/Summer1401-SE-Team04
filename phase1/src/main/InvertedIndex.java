@@ -1,12 +1,10 @@
 package main;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
 public class InvertedIndex {
     private final String directoryPath = new File("").getAbsolutePath() + "\\phase1\\database";
