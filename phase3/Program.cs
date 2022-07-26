@@ -11,8 +11,10 @@ namespace phase3
 
             List<Student> students = JsonSerializer.Deserialize<List<Student>>(studentsJson);
             List<Grade> grades = JsonSerializer.Deserialize<List<Grade>>(gradesJson);
-
             
+            students.ForEach(s => s.AverageGrade = grades.Where(g => g.StudentNumber == s.StudentNumber).Select(g => g.Score).Average());
+            students.OrderByDescending(s => s.AverageGrade).Take(3).ToList().ForEach(s => Console.WriteLine(s.FirstName + " " + 
+            s.LastName + " " + s.AverageGrade));
         }
     }
 }

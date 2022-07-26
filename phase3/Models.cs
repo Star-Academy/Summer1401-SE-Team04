@@ -5,6 +5,9 @@ namespace phase3.Models
     public int StudentNumber { get; set; }
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
+    public double AverageGrade { get; set; }
+
+
 }
 
 public class Grade
