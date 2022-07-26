@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "E:\\java\\Summer1401-SE-Team04\\phase3\\phase3.csproj": {}
+    "E:\\java\\Summer1401-SE-Team04\\phase3\\Phase3.csproj": {}
   },
   "projects": {
-    "E:\\java\\Summer1401-SE-Team04\\phase3\\phase3.csproj": {
+    "E:\\java\\Summer1401-SE-Team04\\phase3\\Phase3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\java\\Summer1401-SE-Team04\\phase3\\phase3.csproj",
-        "projectName": "phase3",
-        "projectPath": "E:\\java\\Summer1401-SE-Team04\\phase3\\phase3.csproj",
+        "projectUniqueName": "E:\\java\\Summer1401-SE-Team04\\phase3\\Phase3.csproj",
+        "projectName": "Phase3",
+        "projectPath": "E:\\java\\Summer1401-SE-Team04\\phase3\\Phase3.csproj",
         "packagesPath": "C:\\Users\\lenovo-irG\\.nuget\\packages\\",
         "outputPath": "E:\\java\\Summer1401-SE-Team04\\phase3\\obj\\",
         "projectStyle": "PackageReference",
