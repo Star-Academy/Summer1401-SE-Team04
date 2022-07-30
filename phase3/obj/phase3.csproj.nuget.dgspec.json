@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "E:\\java\\Summer1401-SE-Team04\\phase3\\Phase3.csproj": {}
+    "C:\\work\\internship\\Summer1401-SE-Team04\\phase3\\phase3.csproj": {}
   },
   "projects": {
-    "E:\\java\\Summer1401-SE-Team04\\phase3\\Phase3.csproj": {
+    "C:\\work\\internship\\Summer1401-SE-Team04\\phase3\\phase3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\java\\Summer1401-SE-Team04\\phase3\\Phase3.csproj",
-        "projectName": "Phase3",
-        "projectPath": "E:\\java\\Summer1401-SE-Team04\\phase3\\Phase3.csproj",
-        "packagesPath": "C:\\Users\\lenovo-irG\\.nuget\\packages\\",
-        "outputPath": "E:\\java\\Summer1401-SE-Team04\\phase3\\obj\\",
+        "projectUniqueName": "C:\\work\\internship\\Summer1401-SE-Team04\\phase3\\phase3.csproj",
+        "projectName": "phase3",
+        "projectPath": "C:\\work\\internship\\Summer1401-SE-Team04\\phase3\\phase3.csproj",
+        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
+        "outputPath": "C:\\work\\internship\\Summer1401-SE-Team04\\phase3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lenovo-irG\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
