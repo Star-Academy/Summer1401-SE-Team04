@@ -9,7 +9,7 @@ var finalRes = new AdvanceSearch().GetFileNamesBySearchWords(searchWords, invert
 
 if (finalRes == null || finalRes.Count == 0)
 {
-    Console.WriteLine("word was not found!");
+    Console.WriteLine("words was not found!");
     return;
 }
 
