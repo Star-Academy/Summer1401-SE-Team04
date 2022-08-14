@@ -10,7 +10,7 @@ namespace SimpleSearch.Test
             _fileReader = new FileReader();
         }
 
-        [Theory]
+        /*[Theory]
         [InlineData("C:\\work\\internship\\Summer1401-SE-Team04\\phase5\\DataBase_Dev")]
         public void ReadDocs_ReadDocuments_WordsInFiles(string path)
         {
@@ -24,5 +24,6 @@ namespace SimpleSearch.Test
             };
             result.Should().BeEquivalentTo(expected);
         }
+        */
     }
 }
